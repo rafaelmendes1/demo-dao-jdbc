@@ -20,12 +20,16 @@ public class Program {
 		
 		System.out.println("TEST 2: Seller findByDepartment =====");
 		Department dep = new Department(4, null);
-		
 		List<Seller> list = sellerDao.findByDepartment(dep);
 		for(Seller obj : list) {
 			System.out.println(obj);
 		}
 		
+		System.out.println("TEST : Seller findByAll =====");
+		List<Seller> listAll = sellerDao.findAll();
+		for(Seller obj : listAll) {
+			System.out.println(obj);
+		
+		}
 	}
-
 }
