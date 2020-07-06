@@ -4,12 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.mysql.jdbc.Statement;
 
 import db.DB;
 import db.DbException;
@@ -89,7 +88,7 @@ public class SellerDaoJDBC implements SellerDao {
 			int rowsAffected = st.executeUpdate();
 			
 			if(rowsAffected == 0) {
-				throw new DbException("ID not exists");
+				throw new DbException("Row with id not exists");
 			}
 			
 		}catch(SQLException e) {

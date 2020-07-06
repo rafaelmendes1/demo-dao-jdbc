@@ -17,36 +17,36 @@ public class Program {
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
-		System.out.println("TEST 1: Seller findById =====");
+		System.out.println("\n TEST 1: Seller findById =====");
 		Seller seller = sellerDao.findById(7);
 		System.out.println(seller);
 		
-		System.out.println("TEST 2: Seller findByDepartment =====");
+		System.out.println("\n TEST 2: Seller findByDepartment =====");
 		Department dep = new Department(4, null);
 		List<Seller> list = sellerDao.findByDepartment(dep);
 		for(Seller obj : list) {
 			System.out.println(obj);
 		}
 		
-		System.out.println("TEST 3: Seller findByAll =====");
+		System.out.println("\n TEST 3: Seller findByAll =====");
 		List<Seller> listAll = sellerDao.findAll();
 		for(Seller obj : listAll) {
 			System.out.println(obj);
 		
 		}
 		
-		System.out.println("TEST 4: Seller insert =====");
+		System.out.println("\n TEST 4: Seller insert =====");
 		Seller sellerInsert = new Seller(null, "Franky", "franky@ciborg.com", new Date(), 300000.0, dep);
 		sellerDao.insert(sellerInsert);
 		System.out.println("Inserted! New id = " + sellerInsert.getId());
 		
-		System.out.println("TEST 5: Seller update =====");
+		System.out.println("\n TEST 5: Seller update =====");
 		seller = sellerDao.findById(1);
 		seller.setName("Martha Waine");
 		sellerDao.update(seller);
 		System.out.println("Update completed");
 		
-		System.out.println("TEST 6: Seller delete =====");
+		System.out.println("\n TEST 6: Seller delete =====");
 		System.out.print("Enter id for delete test: ");
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);
